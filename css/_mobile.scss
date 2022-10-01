@@ -1,0 +1,87 @@
+@media (min-width:320px) and (max-width: 720px) {
+    #conteudo{
+        #produtos{
+            .produto{
+                grid-template-areas: 'titulo'
+                                        'img'
+                                        'desc'
+                                        'btn';
+                
+                &:nth-child(2){
+                    margin: 75px 0;
+                }
+
+                .titulo-produto{
+                    padding: 0 25px;
+                    position: relative;
+                    font-size: 3.1875em;
+                }
+
+                &:nth-child(3){.titulo-produto{
+                    font-size: 1.9375em !important; width: 275px;
+
+                    &::before{bottom: -15px;}
+                }}
+
+                .descricao-produto{
+                    margin: 0 25px;
+                    max-width: 325px;
+
+                    .item-desc{
+                        margin: 5px 0;
+                    }
+                }
+
+                .btn-compra{
+                    
+                }
+
+                .area-img{
+                    display: grid;place-items: center;
+                    margin: 100px auto 25px auto;
+                    width: 192.64px;height:192.64px;
+                    background: rgba($color: $gold, $alpha: .1);
+                    border-radius: 50%;
+
+                    .imagem-produto{
+                        position: relative;
+                        top: -70px;left: 10px;
+                        height: 240px;
+                        transform: rotate(15deg);
+                    }
+                }
+            }
+        }
+
+        #curso{
+            padding: 75px 0 50px 0;
+            text-align: center;
+
+            .titulo-curso, .sub-titulo-curso{
+                font-size: 1.9375em;
+                max-width: 325px;
+            }
+
+            .sub-titulo-curso{
+                font-size: 1.125em;
+                margin: 25px 0 50px 0;
+            }
+
+            #cadastro{
+                @include flex();flex-direction: column;
+                width: 100%;
+
+                input{
+                    padding-left: 15px;
+                    width: 100%;max-width: 350px;height: 45px;
+                    background: rgba($color: $verde, $alpha: 1.0);
+                    border: none;border-radius: 10px;
+
+                    &:nth-child(1){margin-bottom: 15px;}
+                }
+            }
+
+            >.destaque{margin-top: 15px;}
+        }
+    }
+}
