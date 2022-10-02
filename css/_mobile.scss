@@ -9,36 +9,29 @@
 
             .titulo-produto,
             .descricao-produto,
-            .btn-compra{margin: 0 0 0 0px;}
+            .btn-compra{margin: 0 25px ;}
 
                 .titulo-produto{
-                    padding: 0 25px;
                     position: relative;
-                    float: right;
                     font-size: 3.1875em;
                 }
 
+                .detalhe{width: 80vw;}
+
                 &:nth-child(3){.titulo-produto{
                     font-size: 1.9375em !important; width: 275px;
-
-                    &::before{bottom: -15px;}
                 }}
 
                 .descricao-produto{
-                    margin: 0 25px;
                     max-width: 325px;
-
-                    .item-desc{
-                        margin: 5px 0;
-                    }
                 }
 
                 .btn-compra{
-                 color: auto;   
+                 margin-top: 25px;   
                 }
 
                 .area-img{
-                    margin: 100px auto 25px auto !important;
+                    margin: 25px auto !important;
                     width: 192.64px;height:275px;
 
                     &::before{
@@ -47,19 +40,23 @@
 
                     .imagem-produto{
                         position: relative;
-                        height: 240px;
+                        height: 240.81px;
                         transform: rotate(15deg);
                     }
                 }
 
                 &:nth-child(2){
                     margin: 75px 0;
+
+                    .titulo-produto{
+                        float: right;
+                    }
                 }
             }
         }
 
         #curso{
-            padding: 75px 0 50px 0;
+            padding: 50px 0;
             text-align: center;
 
             .titulo-curso, .sub-titulo-curso{
