@@ -1,19 +1,20 @@
-@media (min-width:320px) and (max-width: 720px) {
+@media (min-width:320px) and (max-width: 719px) {
     #conteudo{
         #produtos{
             .produto{
                 grid-template-areas: 'titulo'
                                         'img'
                                         'desc'
-                                        'btn';
-                
-                &:nth-child(2){
-                    margin: 75px 0;
-                }
+                                        'btn' !important;
+
+            .titulo-produto,
+            .descricao-produto,
+            .btn-compra{margin: 0 0 0 0px;}
 
                 .titulo-produto{
                     padding: 0 25px;
                     position: relative;
+                    float: right;
                     font-size: 3.1875em;
                 }
 
@@ -33,22 +34,26 @@
                 }
 
                 .btn-compra{
-                    
+                 color: auto;   
                 }
 
                 .area-img{
-                    display: grid;place-items: center;
-                    margin: 100px auto 25px auto;
-                    width: 192.64px;height:192.64px;
-                    background: rgba($color: $gold, $alpha: .1);
-                    border-radius: 50%;
+                    margin: 100px auto 25px auto !important;
+                    width: 192.64px;height:275px;
+
+                    &::before{
+                        width:192.64px;height: 192.64px;
+                    }
 
                     .imagem-produto{
                         position: relative;
-                        top: -70px;left: 10px;
                         height: 240px;
                         transform: rotate(15deg);
                     }
+                }
+
+                &:nth-child(2){
+                    margin: 75px 0;
                 }
             }
         }
@@ -70,14 +75,16 @@
             #cadastro{
                 @include flex();flex-direction: column;
                 width: 100%;
+                padding: 0 25px;
 
                 input{
+                    margin: 0 !important;
                     padding-left: 15px;
                     width: 100%;max-width: 350px;height: 45px;
                     background: rgba($color: $verde, $alpha: 1.0);
                     border: none;border-radius: 10px;
 
-                    &:nth-child(1){margin-bottom: 15px;}
+                    &:nth-child(1){margin-bottom: 15px !important;}
                 }
             }
 

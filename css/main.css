@@ -15,22 +15,30 @@ body {
 }
 
 .titulo-produto {
+  position: relative;
   color: #CE963F;
   font-family: "Medhurst", serif;
+  max-height: 126px;
+  /*&::before{
+      position: absolute;
+      content: '';
+      bottom: 0%;
+      width: calc(50vw);
+      height: 10px;
+      background: $verde;
+      border-radius: 0 0 25px 0;
+  }*/
 }
-.titulo-produto::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  width: 80vw;
+
+.detalhe {
+  position: relative;
+  width: calc(50vw + 15px);
   height: 10px;
   background: #50513F;
   border-radius: 0 0 25px 0;
 }
 
 .btn-compra {
-  margin-top: 25px;
   width: 200px;
   height: 45px;
   background: #CE963F;
@@ -42,6 +50,12 @@ body {
   box-shadow: 0 0 10px rgba(206, 150, 63, 0.1);
   text-shadow: 0 2.5px 2.5px rgba(80, 81, 63, 0.25);
   cursor: pointer;
+  transition: 0.25s;
+}
+.btn-compra:hover {
+  background: #50513F;
+  color: #DBDBDB;
+  box-shadow: 0 0 25px rgba(206, 150, 63, 0.1);
 }
 
 .destaque {
@@ -49,49 +63,154 @@ body {
   color: #CE963F;
 }
 
-#banner {
-  width: 100vw;
+.banner {
+  width: 100%;
 }
 
+@media (max-width: 719px) {
+  .banner:nth-child(1) {
+    display: none;
+  }
+}
+@media (min-width: 720px) {
+  .banner:nth-child(2) {
+    display: none;
+  }
+}
 #conteudo {
-  padding: 100px 0;
+  padding: 25px 0px 0 0;
 }
 #conteudo #produtos .produto {
   display: grid;
+  grid-gap: 0;
   grid-template-areas: "titulo img" "desc img" "btn img";
+  margin: 75px 0;
+}
+#conteudo #produtos .produto .titulo-produto,
+#conteudo #produtos .produto .descricao-produto,
+#conteudo #produtos .produto .btn-compra {
+  margin: 0 0 0 125px;
 }
 #conteudo #produtos .produto .titulo-produto {
   grid-area: titulo;
+  font-size: 6.25em;
 }
 #conteudo #produtos .produto .descricao-produto {
   grid-area: desc;
+  max-width: 420px;
+}
+#conteudo #produtos .produto .descricao-produto .item-desc {
+  margin: 7.5px 0;
 }
 #conteudo #produtos .produto .btn-compra {
   grid-area: btn;
 }
-#conteudo #produtos .produto .area-imagem {
+#conteudo #produtos .produto .area-img {
+  margin: auto 0;
+  position: relative;
   grid-area: img;
+  display: grid;
+  place-items: center;
+  width: 400px;
+  height: 400px;
+}
+#conteudo #produtos .produto .area-img {
+  position: relative;
+  width: 400px;
+  height: 571px;
+}
+#conteudo #produtos .produto .area-img::before {
+  content: "";
+  position: absolute;
+  top: 66%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: rgba(206, 150, 63, 0.1);
+  border-radius: 50%;
+}
+#conteudo #produtos .produto .area-img .imagem-produto {
+  position: relative;
+  height: 500px;
+  transform: rotate(15deg);
+  filter: drop-shadow(15px 15px 25px rgba(29, 29, 27, 0.25));
+}
+#conteudo #produtos .produto:nth-child(3) .titulo-produto {
+  font-size: 3.5em;
+  max-width: 475px;
+  max-height: 140px;
+}
+#conteudo #produtos .produto:nth-child(2) {
+  grid-template-areas: "img titulo" "img desc" "img btn";
+}
+#conteudo #produtos .produto:nth-child(2) .detalhe {
+  position: relative;
+  float: right;
+  border-radius: 0 0 0 10px;
+}
+#conteudo #produtos .produto:nth-child(2) .area-img {
+  margin-left: 125px;
 }
 #conteudo #curso {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
+}
+#conteudo #curso .titulo-curso {
+  font-size: 2.9375em;
+  max-width: 600px;
 }
 #conteudo #curso .titulo-curso .destaque {
   font-family: "Medhurst", serif;
 }
+#conteudo #curso .sub-titulo-curso {
+  font-size: 1.25em;
+  max-width: 550px;
+  margin: 25px 0 50px 0;
+}
+#conteudo #curso #cadastro {
+  max-width: 800px;
+}
+#conteudo #curso #cadastro input {
+  width: 375px;
+  height: 45px;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #50513F;
+}
+#conteudo #curso #cadastro input:nth-child(1) {
+  margin-right: 25px;
+}
+#conteudo #curso #cadastro input::-moz-placeholder {
+  color: rgba(219, 219, 219, 0.5);
+}
+#conteudo #curso #cadastro input:-ms-input-placeholder {
+  color: rgba(219, 219, 219, 0.5);
+}
+#conteudo #curso #cadastro input::placeholder {
+  color: rgba(219, 219, 219, 0.5);
+}
+#conteudo #curso .btn-compra {
+  margin: 25px 0 15px 0;
+}
 
-@media (min-width: 320px) and (max-width: 720px) {
+@media (min-width: 320px) and (max-width: 719px) {
   #conteudo #produtos .produto {
-    grid-template-areas: "titulo" "img" "desc" "btn";
+    grid-template-areas: "titulo" "img" "desc" "btn" !important;
   }
-  #conteudo #produtos .produto:nth-child(2) {
-    margin: 75px 0;
+  #conteudo #produtos .produto .titulo-produto,
+#conteudo #produtos .produto .descricao-produto,
+#conteudo #produtos .produto .btn-compra {
+    margin: 0 0 0 0px;
   }
   #conteudo #produtos .produto .titulo-produto {
     padding: 0 25px;
     position: relative;
+    float: right;
     font-size: 3.1875em;
   }
   #conteudo #produtos .produto:nth-child(3) .titulo-produto {
@@ -108,21 +227,25 @@ body {
   #conteudo #produtos .produto .descricao-produto .item-desc {
     margin: 5px 0;
   }
+  #conteudo #produtos .produto .btn-compra {
+    color: auto;
+  }
   #conteudo #produtos .produto .area-img {
-    display: grid;
-    place-items: center;
-    margin: 100px auto 25px auto;
+    margin: 100px auto 25px auto !important;
+    width: 192.64px;
+    height: 275px;
+  }
+  #conteudo #produtos .produto .area-img::before {
     width: 192.64px;
     height: 192.64px;
-    background: rgba(206, 150, 63, 0.1);
-    border-radius: 50%;
   }
   #conteudo #produtos .produto .area-img .imagem-produto {
     position: relative;
-    top: -70px;
-    left: 10px;
     height: 240px;
     transform: rotate(15deg);
+  }
+  #conteudo #produtos .produto:nth-child(2) {
+    margin: 75px 0;
   }
   #conteudo #curso {
     padding: 75px 0 50px 0;
@@ -142,8 +265,10 @@ body {
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    padding: 0 25px;
   }
   #conteudo #curso #cadastro input {
+    margin: 0 !important;
     padding-left: 15px;
     width: 100%;
     max-width: 350px;
@@ -153,7 +278,7 @@ body {
     border-radius: 10px;
   }
   #conteudo #curso #cadastro input:nth-child(1) {
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
   }
   #conteudo #curso > .destaque {
     margin-top: 15px;
