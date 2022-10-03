@@ -1,4 +1,4 @@
-@media (min-width:320px) and (max-width: 719px) {
+@media (min-width:320px) and (max-width: 1024px) {
     #conteudo{
         #produtos{
             .produto{
@@ -6,6 +6,8 @@
                                         'img'
                                         'desc'
                                         'btn' !important;
+
+                @media (min-width:720px) and (max-width:1024px) {}
 
             .titulo-produto,
             .descricao-produto,

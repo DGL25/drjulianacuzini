@@ -76,8 +76,8 @@ body::-webkit-scrollbar-thumb{background: linear-gradient(45deg, $gold, $backgro
 
 .banner{width: 100%;}
 
-@media (max-width:575px) {.banner:nth-child(1){display: none;}}
-@media (min-width:576px) {.banner:nth-child(2){display: none;}}
+@media (max-width:475px) {.banner:nth-child(1){display: none;}}
+@media (min-width:476px) {.banner:nth-child(2){display: none;}}
 
 #conteudo{
     padding: 25px 0px 0 0;
@@ -119,9 +119,6 @@ body::-webkit-scrollbar-thumb{background: linear-gradient(45deg, $gold, $backgro
                 position: relative;
                 width: 400px;height: 571px;
 
-                @media (min-width:720px) and (max-width:1024px){
-                    transform: scale(.1);
-                }
                 
                 &::before{
                     content: '';
@@ -204,6 +201,13 @@ body::-webkit-scrollbar-thumb{background: linear-gradient(45deg, $gold, $backgro
             margin: 25px 0 15px 0;
         }
     }
+}
+
+#rodape{
+    margin-top: 50px;
+    height: 100px;
+    background: rgba($color: $verde, $alpha: .25);
+    display: grid;place-items: center;
 }
 
 @import 'mobile'
